@@ -58,6 +58,10 @@
                         <li class="fragment">Item #1</li>
                         <li class="fragment">Item #2</li>
                     </ul>
+                    <h4>Math!</h4>
+                    <div class="row">
+                        When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+                    </div>
 
                 </section>
 
@@ -102,6 +106,12 @@
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
+                // Add math
+                math: {
+                    mathjax: 'MathJax-master/MathJax.js',
+                    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+                },
+
 				// Optional reveal.js plugins
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -110,6 +120,7 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/math/math.js', async: true },    // mathjax
                     { src: 'presentation-data/js/jquery-1.11.2.min.js' } ,
                     { src: 'presentation-data/js/bootstrap.min.js' } ,
                     { src: 'presentation-data/js/d3.min.js' },
