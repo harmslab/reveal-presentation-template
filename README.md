@@ -26,3 +26,45 @@ Type `grunt serve` in the reveal.js/ directory.
 
 ##Notes:
 The `node_modules` and `MathJax-master` directories are quite large.  I have them stored in a different location and then symlink them into each presentation. 
+
+## Viewer Apps in presentation
+
+To add one of our Viewer apps to a presentation, do the following:
+
+1. Add Viewer app as submodule inside of `presentation-data`:
+    
+    ```
+    git submodule add <viewer-app>
+    cd <viewer-folder>
+    git submodule init
+    git submodule update --init --recursive
+    ```
+2. Add Requirejs cofigurations to `presentation-data/js`, i.e. create a file named `viewer-config.js` with:
+    
+    ```javascript
+    requirejs.config({
+        baseUrl: 'presentation-data/<viewer-folder>',
+        paths: {
+            backbone: 'lib/backbone/backbone-min',
+            bootstrap: 'lib/bootstrap/js/bootstrap.min',
+            d3: 'lib/d3/d3.min',
+            jquery: 'lib/jquery/jquery.min',
+            jqueryui: 'lib/jquery-ui/jquery-ui.min',
+            underscore: 'lib/underscore/underscore-min',
+            text: 'lib/require/text'
+        }
+    })
+    // Enter application through main.js
+    requirejs(['js/main']);
+    ```
+
+3. Add necessary dependencies to index.html, i.e.:
+
+    ```javascript
+	dependencies: [
+	    ...        
+        { src: 'presentation-data/<viewer>/lib/require/require.js'},
+        { src: 'presentation-data/js/<viewer-config.js>'}    
+	]
+    ```
+4. Add entry-point element to slide.

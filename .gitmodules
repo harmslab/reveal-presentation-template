@@ -1,3 +1,6 @@
 [submodule "reveal"]
 	path = reveal
 	url = https://github.com/hakimel/reveal.js
+[submodule "presentation-data/NetworkViewer"]
+	path = presentation-data/NetworkViewer
+	url = https://github.com/harmslab/NetworkViewer
