@@ -26,3 +26,5 @@ Type `grunt serve` in the reveal.js/ directory.
 
 ##Notes:
 The `node_modules` and `MathJax-master` directories are quite large.  I have them stored in a different location and then symlink them into each presentation. 
+
+To add one of our Viewer-apps to a slide, checkout of this [example](https://github.com/harmslab/reveal-presentation-template/tree/viewer-example).
