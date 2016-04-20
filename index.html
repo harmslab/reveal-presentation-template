@@ -10,13 +10,12 @@
 		<meta name="author" content="Michael J. Harms">
 
 
-
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-        
+
 		<link rel="stylesheet" href="reveal/css/reveal.css">
 		<link rel="stylesheet" href="reveal/css/theme/white.css" id="theme">
 
@@ -34,9 +33,9 @@
 
         <!-- Add boostrap css (not included in reveal.js)-->
         <link rel="stylesheet" href="presentation-data/css/bootstrap.min.css">
-        <!-- CUSTOMIZE STYLESHEET HERE -->        
+        <!-- CUSTOMIZE STYLESHEET HERE -->
 		<link rel="stylesheet" href="presentation-data/css/override.css">
-        
+
 	</head>
 
 	<body>
@@ -83,13 +82,18 @@
                         </video>
                     </div>
                 </section>
-   
+
                 <section>
                     <h4>D3 embed</h4>
                     <button align="middle" onclick="transition()">Update</button>
                     <div id="d3embed"></div>
                 </section>
-                        
+
+				<section>
+					<h4>Protein Viewer</h4>
+					<div id=viewer></div>
+				</section>
+
 			</div>
 
 		</div>
@@ -98,7 +102,7 @@
 
 		<script src="reveal/lib/js/head.min.js"></script>
 		<script src="reveal/js/reveal.js"></script>
-    
+
 		<script>
 
 			// Full list of configuration options available at:
@@ -110,7 +114,7 @@
 				center: true,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
-                
+
 /* NOTE:: Uncomment if using local MathJax (rather than CDN)
                 // Add math
                 math: {
@@ -118,7 +122,7 @@
                     config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
                 },
 */
-                
+
 				// Optional reveal.js plugins
 				dependencies: [
 					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -131,7 +135,10 @@
                     { src: 'presentation-data/lib/jquery-1.11.2.min.js' } ,
                     { src: 'presentation-data/lib/bootstrap.min.js' } ,
                     { src: 'presentation-data/lib/d3.min.js' },
-                    { src: 'presentation-data/js/test-stream.js'}
+                    { src: 'presentation-data/js/test-stream.js'},
+					{ src: 'presentation-data/lib/bio-pv.min.js'},
+					{ src: 'presentation-data/js/pv-example.js'}
+
 				]
 			});
 
