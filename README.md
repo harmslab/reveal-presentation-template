@@ -1,30 +1,56 @@
-# reveal-presentation-template
-html and basic directory structure template for (relatively) easily creating reveal.js slideshows with all dependencies locally so you do not need an internet connection while presenting.
+# Harms Lab reveal.js Template
 
-##Basic installation:
-1. Clone the reveal-presentation-template repository
-    
-    ```
-    git clone https://github.com/harmslab/reveal-presentation-template
-    ```
-2. Grab reveal as submodule:
-    
-    ```
-    cd reveal-presentation-template
-    git submodule init
-    git submodule update
-    ```
-3. If you want to run on local server, follow Reveal's instructions for node and grunt [here](https://github.com/hakimel/reveal.js/) 
-4. If you want mathjax locally, download the latest release (https://github.com/mathjax/MathJax/archive/master.zip) and unzip it into the reveal.js base directory.  This should create a directory called `MathJax-master`.
+Template files for creating [reveal.js](https://github.com/hakimel/reveal.js/)
+presentations.
 
-##To edit: 
- * Create slides in index.html
- * Add contents (images, videos, js, etc.) to the presentation-data directory
+### Contains
 
-##To run:
-Type `grunt serve` in the reveal.js/ directory.
++ A minimal, slightly tweaked reveal.js html file (template.html).  
++ A clean, open source font (Lato)
++ A slide template (template.svg) that can be used with [slidemachine](https://github.com/harmsm/slidemachine))
+  to generate slides from layers.
 
-##Notes:
-The `node_modules` and `MathJax-master` directories are quite large.  I have them stored in a different location and then symlink them into each presentation. 
+### Setup 
 
-To add one of our Viewer-apps to a slide, checkout of this [example](https://github.com/harmslab/reveal-presentation-template/tree/viewer-example).
+1. Install node, if you haven't already
+
+Download latest stable release [here](https://nodejs.org/en/)
+
+2. Clone reveal.js and install packages
+
+```
+git clone https://github.com/hakimel/reveal.js.git
+cd reveal.js
+npm install
+```
+
+3. Clone this presentation template
+
+```
+git clone https://github.com/harmslab/reveal-presentation-template
+cd reveal-presentation-template
+cp -r template.html fonts ../
+```
+4. (optional). Install mathjax
+
+This is helpful if you are giving talk where you may not have access to the
+Internet. 
+
+```
+# execute this in the reveal.js directory
+git clone https://github.com/mathjax/MathJax.git MathJax
+```
+
+Edit `template.html` so it points to the local MathJax..
+
+```
+mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js'
+//mathjax: 'MathJax/MathJax.js',
+```
+
+5. Run the presentation
+
+```
+# execute this in the reveal.js directory
+npm start
+```
