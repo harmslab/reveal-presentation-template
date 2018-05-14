@@ -29,7 +29,7 @@ npm install
 ```
 git clone https://github.com/harmslab/reveal-presentation-template
 cd reveal-presentation-template
-cp -r template.html fonts ../
+cp -r template.* fonts ../
 ```
 4. (optional). Install mathjax
 
